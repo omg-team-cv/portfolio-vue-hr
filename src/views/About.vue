@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>це абоут сторінка </h1>
+    <h1>це зовсім не абаут  сторінка </h1>
   </div>
 </template>
