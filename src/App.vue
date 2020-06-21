@@ -2,11 +2,17 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> | 
+      <router-link to="/pass">Password Generator</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+<style >
+*{
+  background-color: #f3f3f3
+}
+</style>
 
 <style lang="scss">
 #app {
