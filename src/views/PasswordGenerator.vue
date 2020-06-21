@@ -25,8 +25,9 @@
         </div>        
         </div>
       </div>
-      <input type="text" name="" placeholder="Create Password" class="password" readonly :value="password">
-      <div id="btn" v-on:click="passRand()" >Generate Password</div>
+      <input type="text" name="" placeholder="Create Password" class="password" id="pass" readonly :value="password">
+      <div class="btn" v-on:click="passRand()" >Generate Password</div>
+      <div class="btn btn_second" v-on:click="copyPassword()">Copy</div>
     </div>
   </div>
 </template>
@@ -35,7 +36,7 @@
 export default {
 data() {
   return {
-    chars: "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_+?><:{}[]",
+    // chars: "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_+?><:{}[]",
     passwordLenght: 16,
     password: '',
     cb1: {value:'0123456789', state: true},
@@ -66,6 +67,12 @@ methods: {
       let randomNumber = Math.floor(Math.random() * this.x.length)
       this.password += this.x.substring(randomNumber, randomNumber+1)
     }
+  },
+  copyPassword(){
+    let copy = document.getElementById("pass")
+    copy.select()      
+    document.execCommand("copy")
+    window.getSelection().removeAllRanges()
   }
 }
 
@@ -125,7 +132,7 @@ methods: {
 .checkbox__container input{
   margin: 15px 10px;
 }
-.inputBox #btn{
+.inputBox .btn{
   position: relative;
   cursor: pointer;
   color: #fff;
@@ -134,8 +141,12 @@ methods: {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
+  margin: 10px;
 }
-.inputBox #btn:active{
-  background: purple;
+.inputBox .btn_second{
+  font-size: 1.2rem;
+}
+.inputBox .btn:active{
+  background: purple !important;
 }
 </style>
