@@ -110,7 +110,7 @@
   justify-content: space-around;
 }
 .btn{
-  margin: 20px 0;
+  margin: 20px 5px;
 }
 
 </style>
